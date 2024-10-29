@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Trip Essential Rentals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body ng-app="rentalApp" ng-controller="rentalController">
+
+    <header>
+        <h1>Road Trip Essential Rentals</h1>
+    </header>
+
+    <section class="welcome-section">
+        <h2>Affordable Roadtrip Adventures:</h2>
+        <p>Welcome to Road Trip Essential Rentals, where prepared roadtrips on a budget are made possible.</p>
+    </section>
+
+    <section class="products-section">
+        <h2>Most Common Roadtrip Essentials</h2>
+        <div class="product" ng-repeat="product in products">
+            <img ng-src="{{ product.image }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <button class="rent-button">Rent Now</button>
+        </div>
+    </section>
+
+</body>
+</html>
